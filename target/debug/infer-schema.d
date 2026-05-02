@@ -1,1 +1,0 @@
-C:\Users\Hayden\workspace-rust-de\Project-4\lorril26-project-4\target\debug\infer-schema.exe: C:\Users\Hayden\workspace-rust-de\Project-4\lorril26-project-4\src\ddl.rs C:\Users\Hayden\workspace-rust-de\Project-4\lorril26-project-4\src\infer.rs C:\Users\Hayden\workspace-rust-de\Project-4\lorril26-project-4\src\main.rs
