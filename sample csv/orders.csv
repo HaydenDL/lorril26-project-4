@@ -1,0 +1,11 @@
+order_number,order_date,customer_id,item_count,total_amount,discount_percent,shipping_address,delivery_status
+ORD-2023-0001,2023-11-10,101,3,124.50,0.0,"123 Main St, NY",delivered
+ORD-2023-0002,2023-11-11,102,1,49.99,,null,pending
+ORD-2023-0003,2023-11-12,105,7,899.50,15.5,"456 Oak Ave, CA",shipped
+ORD-2023-0004,2023-11-13,,2,75.00,0.0,"789 Pine Rd, TX",
+ORD-2023-0005,2023-11-14,103,5,,10.0,"321 Elm St, FL",delivered
+ORD-2023-0006,2023-11-15,104,1,199.99,,null,cancelled
+ORD-2023-0007,2023-11-16,106,12,2450.00,25.0,"654 Maple Dr, WA",shipped
+ORD-2023-0008,2023-11-17,107,,340.75,5.0,null,pending
+ORD-2023-0009,2023-11-18,108,4,560.25,,,"987 Cedar Ln, CO",delivered
+ORD-2023-0010,2023-11-18,109,2,299.99,0.0,"555 Birch Pt, MA",

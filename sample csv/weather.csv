@@ -1,0 +1,11 @@
+location,temperature_celsius,humidity_percent,atmospheric_pressure_hpa,wind_speed_kmh,observation_date
+New York,15.5,65,1013.25,8.3,2023-11-18
+London,10.2,,1012.50,12.1,2023-11-18
+Tokyo,22.8,72,1015.12,5.6,2023-11-18
+Sydney,25.3,48,,15.8,2023-11-18
+Dubai,38.9,35,1010.20,,2023-11-18
+Moscow,-2.1,85,1014.90,10.5,2023-11-18
+Toronto,8.7,70,1011.80,,2023-11-18
+Singapore,27.2,79,1013.45,3.2,2023-11-18
+Paris,12.4,60,,9.1,2023-11-18
+Mumbai,32.1,68,1012.15,7.8,2023-11-18
