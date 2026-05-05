@@ -8,7 +8,7 @@ pub fn generate_create_table(table_name: &str, cols: &[ColumnSchema], dialect: &
     let mut parts: Vec<String> = Vec::with_capacity(cols.len());
     for c in cols {
         let t = map_type(&c.data_type, &dialect);
-        let null_str = if c.nullable { "" } else { " NOT NULL" };
+        let null_str = if c.nullable { " NULL" } else { "" };
         parts.push(format!("{} {}{}", c.name, t, null_str));
     }
 

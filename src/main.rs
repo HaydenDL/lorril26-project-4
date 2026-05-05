@@ -33,6 +33,10 @@ struct Args {
     //delimeter used, default ','
     #[arg(long = "delimiter", default_value = ",", value_parser = parse_delimiter)]
     delimiter: String,
+
+    //print additional runtime details to help debug CLI behavior
+    #[arg(short = 'v', long = "verbose")]
+    verbose: bool,
 }
 //different SQL dialects we support
 #[derive(Copy, Clone, Debug, ValueEnum)]
@@ -92,9 +96,21 @@ fn run(args: Args) -> Result<()> {
         .clone()
         .unwrap_or_else(|| infer::default_table_name(&file_path));
 
+    if args.verbose {
+        eprintln!("[verbose] input file: {}", args.file.display());
+        eprintln!("[verbose] dialect: {}", args.dialect.as_str());
+        eprintln!("[verbose] sample size: {}", args.sample_size);
+        eprintln!("[verbose] delimiter: {:?}", delimiter);
+        eprintln!("[verbose] table name: {}", table_name);
+    }
+
     //infer the schema
     let cols = infer::infer_from_path(&file_path, args.sample_size, delimiter)
         .with_context(|| format!("failed to read or infer schema from {}", args.file.display()))?;
+
+    if args.verbose {
+        eprintln!("[verbose] inferred columns: {}", cols.len());
+    }
 
     //generate the DDL statement
     let ddl = ddl::generate_create_table(&table_name, &cols, args.dialect.as_str());
@@ -103,6 +119,9 @@ fn run(args: Args) -> Result<()> {
     if let Some(out) = args.output {
         std::fs::write(&out, ddl)
             .with_context(|| format!("failed to write output file {}", out.display()))?;
+        if args.verbose {
+            eprintln!("[verbose] wrote output to: {}", out.display());
+        }
     } else {
         println!("{}", ddl);
     }
